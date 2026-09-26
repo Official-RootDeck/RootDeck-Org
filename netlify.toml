@@ -1,0 +1,20 @@
+[build]
+  command = "node scripts/generate-config.mjs"
+  publish = "out"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "SAMEORIGIN"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+# Keep Next's extensionless static API artifact reachable if the browser ever requests it.
+[[redirects]]
+  from = "/api/projects"
+  to = "/api/projects"
+  status = 200
