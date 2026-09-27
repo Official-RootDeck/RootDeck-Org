@@ -1,5 +1,5 @@
 [build]
-  command = "node scripts/generate-config.mjs"
+  command = "node scripts/generate-config.mjs && node scripts/remove-issue-copy.mjs"
   publish = "."
 
 [build.environment]
