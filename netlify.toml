@@ -1,6 +1,6 @@
 [build]
   command = "node scripts/generate-config.mjs"
-  publish = "out"
+  publish = "."
 
 [build.environment]
   NODE_VERSION = "20"
