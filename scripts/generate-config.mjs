@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 
-const outDir = path.resolve("out");
+const publishDir = path.resolve(".");
 const url = process.env.NEXT_PUBLIC_SUPABASE_URL || "";
 const anonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "";
 const appUrl = process.env.APP_URL || "";
@@ -16,5 +16,5 @@ const config = `window.__ROOTDECK_CONFIG__ = ${JSON.stringify({
   APP_URL: appUrl
 })};`;
 
-fs.writeFileSync(path.join(outDir, "config.js"), config + "\n", "utf8");
+fs.writeFileSync(path.join(publishDir, "config.js"), config + "\n", "utf8");
 console.log("RootDeck runtime config generated.");
